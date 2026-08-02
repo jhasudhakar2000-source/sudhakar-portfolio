@@ -1,0 +1,11 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#111111"/>
+  <rect x="84" y="84" width="1432" height="832" rx="8" fill="url(#paint0_radial)"/>
+  <path d="M0 758C268 639 458 913 743 772C1028 631 1210 434 1600 560V1000H0V758Z" fill="#202020"/>
+  <circle cx="1224" cy="364" r="148" fill="#D4FF44" fill-opacity=".12"/>
+  <path d="M0 0H1600V1000H0V0Z" fill="url(#paint1_linear)" fill-opacity=".45"/>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientTransform="translate(1148 286) rotate(137.621) scale(958.687 1043.4)" gradientUnits="userSpaceOnUse"><stop stop-color="#303030"/><stop offset="1" stop-color="#111111"/></radialGradient>
+    <linearGradient id="paint1_linear" x1="133" y1="47" x2="1486" y2="977" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".08"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>
+  </defs>
+</svg>
