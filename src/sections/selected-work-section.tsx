@@ -59,7 +59,7 @@ function FilmCard({ project, index }: { project: Film; index: number }) {
         className="group order-1 block justify-self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:order-2"
         aria-label={`Watch ${project.title}`}
       >
-        <div className="relative aspect-[9/16] h-[min(80svh,50rem)] overflow-hidden rounded-[1.4rem] bg-[#121212] shadow-[0_2rem_5rem_rgba(0,0,0,0.48)] sm:h-[min(86svh,60rem)]">
+        <div className="relative aspect-[9/16] h-[min(72svh,33rem)] overflow-hidden rounded-[1.4rem] bg-[#121212] shadow-[0_2rem_5rem_rgba(0,0,0,0.48)] sm:h-[min(86svh,60rem)]">
           <video
             ref={videoRef}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] group-focus-visible:scale-[1.02]"

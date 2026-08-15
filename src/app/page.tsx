@@ -16,12 +16,12 @@ export default function HomePage() {
       <BehindTheEditSection />
       <SelectClientsSection />
       <ImpactSection />
+      <AboutSection />
       <ArchiveSection />
       <ContactSection />
       <PlaceholderSection id="showreel" title="Showreel" />
       <PlaceholderSection id="arsenal" title="Creative Arsenal" />
       <PlaceholderSection id="services" title="Services" />
-      <AboutSection />
     </>
   );
 }

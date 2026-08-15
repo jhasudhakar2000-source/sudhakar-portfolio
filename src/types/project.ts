@@ -2,7 +2,7 @@ export type Project = {
   slug: string;
   title: string;
   client: string;
-  year: number;
+  year?: number;
   category: string;
   summary: string;
   featured: boolean;

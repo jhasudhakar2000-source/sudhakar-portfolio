@@ -2,6 +2,18 @@ import type { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
+    slug: "sogl",
+    title: "SoGL",
+    client: "School of Global Leadership",
+    category: "Motion / Editorial Film",
+    summary: "An editorial film shaped through editing, motion design and visual storytelling.",
+    featured: false,
+    media: {
+      video: "/projects/sogl/final-video.mp4",
+      thumbnail: "/projects/sogl/thumbnail.jpg",
+    },
+  },
+  {
     slug: "lifelong",
     title: "Lifelong",
     client: "Lifelong",

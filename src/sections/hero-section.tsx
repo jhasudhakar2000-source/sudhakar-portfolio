@@ -49,7 +49,7 @@ export function HeroSection() {
           <motion.p
             variants={entrance}
             transition={{ duration: 0.6 }}
-            className="mt-6 whitespace-nowrap font-display text-[clamp(2.5rem,11vw,6.25rem)] font-bold leading-none tracking-[-0.06em]"
+            className="mt-6 whitespace-nowrap font-display text-[clamp(2.2rem,10.5vw,6.25rem)] font-bold leading-none tracking-[-0.06em]"
           >
             Sudhakar Jha
           </motion.p>
