@@ -177,6 +177,167 @@ function SoglCaseStudy({ project, media, nextProject }: { project: Project; medi
   );
 }
 
+function UniversalMusicCaseStudy({ project, media, nextProject }: { project: Project; media: ProjectMedia; nextProject?: Project }) {
+  const projectName = "Haryanvi Music Edit";
+  const category = "Music / Motion Film";
+
+  return (
+    <article className="bg-black">
+      <section className="border-b border-white/10" aria-labelledby="project-title">
+        <div className="page-shell py-16 sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Case Study / 02</p>
+            <p className="mt-8 text-sm uppercase tracking-[0.15em] text-muted sm:text-base">{category}</p>
+            <h1
+              id="project-title"
+              className="mt-5 font-display text-[clamp(3.6rem,9vw,8.5rem)] font-bold leading-[0.82] tracking-[-0.075em]"
+            >
+              {project.title}
+            </h1>
+            <p className="mt-7 font-display text-xl leading-tight tracking-[-0.035em] text-ink sm:text-3xl">
+              {projectName}
+            </p>
+            <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+              A music-focused edit shaped through image cutout animation, motion design and
+              editorial rhythm.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-14 max-w-[44rem] sm:mt-20">
+            <div className="overflow-hidden rounded-[1.5rem] bg-[#090909] shadow-[0_2rem_5rem_rgba(0,0,0,0.5)]">
+              <video
+                className="block h-auto w-full"
+                width={1080}
+                height={1350}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster={media.thumbnail}
+                aria-label={`${project.title} ${projectName} preview`}
+              >
+                <source src={media.video} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10" aria-labelledby="introduction-title">
+        <div className="page-shell py-24 sm:py-32 lg:py-40">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">The Edit</p>
+            <h2
+              id="introduction-title"
+              className="mt-8 font-display text-[clamp(2.35rem,5vw,5.5rem)] font-medium leading-[0.95] tracking-[-0.055em]"
+            >
+              Music-driven pacing with an image-led motion treatment.
+            </h2>
+            <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+              The edit uses cutout imagery and motion to move with the music, keeping the visual
+              language concise, composed and rhythm-led.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10" aria-labelledby="project-details-title">
+        <div className="page-shell py-20 sm:py-24 lg:py-28">
+          <h2 id="project-details-title" className="sr-only">
+            Project details
+          </h2>
+          <dl className="grid gap-y-10 sm:grid-cols-2 sm:gap-x-12 lg:grid-cols-4 lg:gap-x-16">
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Client</dt>
+              <dd className="mt-3 font-display text-xl tracking-[-0.035em]">{project.client}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Project</dt>
+              <dd className="mt-3 font-display text-xl tracking-[-0.035em]">{projectName}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Category</dt>
+              <dd className="mt-3 font-display text-xl tracking-[-0.035em]">{category}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Year</dt>
+              <dd className="mt-3 font-display text-xl tracking-[-0.035em]">{project.year}</dd>
+            </div>
+          </dl>
+          <div className="mt-12 border-t border-white/10 pt-7 sm:mt-16">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Role</p>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-ink sm:text-lg">Editing</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10" aria-labelledby="showcase-title">
+        <div className="page-shell py-24 sm:py-32 lg:py-40">
+          <div className="mb-10 flex items-end justify-between gap-6 sm:mb-14">
+            <h2
+              id="showcase-title"
+              className="font-display text-[clamp(2.75rem,6vw,6.5rem)] font-medium leading-none tracking-[-0.065em]"
+            >
+              Final Film
+            </h2>
+            <p className="pb-1 text-xs font-medium uppercase tracking-[0.18em] text-muted">Play with sound</p>
+          </div>
+          <div className="mx-auto max-w-[52rem] overflow-hidden rounded-[1.5rem] bg-[#090909]">
+            <video
+              className="block h-auto w-full"
+              width={1080}
+              height={1350}
+              controls
+              playsInline
+              preload="metadata"
+              poster={media.thumbnail}
+              aria-label={`${project.title} ${projectName} final film`}
+            >
+              <source src={media.video} type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10" aria-labelledby="approach-title">
+        <div className="page-shell py-20 sm:py-28 lg:py-32">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Creative Approach</p>
+            <h2
+              id="approach-title"
+              className="mt-8 font-display text-[clamp(2.35rem,5vw,5.5rem)] font-medium leading-[0.86] tracking-[-0.055em]"
+            >
+              <span className="block">Image cutouts.</span>
+              <span className="block text-muted">3D motion.</span>
+              <span className="block">Editorial rhythm.</span>
+            </h2>
+            <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
+              A focused motion treatment gives each transition a visual pulse while keeping the
+              music at the centre of the edit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {nextProject ? (
+        <nav className="page-shell py-20 sm:py-24 lg:py-28" aria-label="Project navigation">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">Next project</p>
+          <Link
+            href={`/work/${nextProject.slug}`}
+            className="group mt-5 inline-flex items-center gap-4 font-display text-[clamp(2.75rem,6vw,6.5rem)] font-medium leading-none tracking-[-0.065em] transition-colors duration-300 hover:text-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            {nextProject.title}
+            <span className="text-[0.65em] transition-transform duration-300 group-hover:translate-x-2" aria-hidden="true">
+              →
+            </span>
+          </Link>
+        </nav>
+      ) : null}
+    </article>
+  );
+}
+
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -186,6 +347,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   if (project.slug === "sogl" && media) {
     return <SoglCaseStudy project={project} media={media} nextProject={getProjectBySlug("universal-music")} />;
+  }
+
+  if (project.slug === "universal-music" && media) {
+    return <UniversalMusicCaseStudy project={project} media={media} nextProject={getProjectBySlug("lifelong")} />;
   }
 
   if (project.slug !== "lifelong" || !media) {
