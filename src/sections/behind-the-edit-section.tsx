@@ -24,7 +24,7 @@ function ProjectProcess({ project, index }: { project: ProcessProject; index: nu
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.6 }}
-      className="grid min-h-[70svh] items-center gap-14 border-t border-white/10 py-24 first:border-t-0 sm:py-32 lg:grid-cols-2 lg:gap-24 lg:py-36"
+      className="grid min-h-[70svh] items-center gap-14 border-t border-ink/16 py-24 first:border-t-0 sm:py-32 lg:grid-cols-2 lg:gap-24 lg:py-36"
     >
       <div className={`${reversed ? "lg:order-2" : "lg:order-1"} max-w-xl`}>
         <p className="text-xs uppercase tracking-[0.2em] text-muted">FILM 0{index + 1}</p>
@@ -41,7 +41,7 @@ function ProjectProcess({ project, index }: { project: ProcessProject; index: nu
               transition={{ duration: 0.45, delay: stageIndex * 0.1 }}
               className="flex items-center gap-4"
             >
-              <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-md border border-white/10 bg-[#161616] sm:h-20 sm:w-32">
+              <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-md border border-ink/16 bg-elevated sm:h-20 sm:w-32">
                 <Image src={stage.image} alt="" fill sizes="128px" className="object-cover" />
               </div>
               <p className="text-xs uppercase tracking-[0.16em] text-muted">{stage.label}</p>
@@ -56,7 +56,7 @@ function ProjectProcess({ project, index }: { project: ProcessProject; index: nu
           >
             <span
               aria-hidden="true"
-              className="ml-11 h-6 border-l border-white/25 sm:ml-[3.75rem]"
+              className="ml-11 h-6 border-l border-ink/28 sm:ml-[3.75rem]"
             />
             <p className="text-xs uppercase tracking-[0.16em] text-ink">Final Reel</p>
           </motion.div>
@@ -70,7 +70,7 @@ function ProjectProcess({ project, index }: { project: ProcessProject; index: nu
         transition={{ duration: 0.6, delay: 0.08 }}
         className={`${reversed ? "lg:order-1" : "lg:order-2"} justify-self-center`}
       >
-        <div className="relative aspect-[9/16] h-[min(68svh,46rem)] overflow-hidden rounded-[1.4rem] bg-[#121212] shadow-[0_2rem_5rem_rgba(0,0,0,0.48)] sm:h-[min(74svh,52rem)]">
+        <div className="relative aspect-[9/16] h-[min(68svh,46rem)] overflow-hidden rounded-[1.4rem] bg-elevated shadow-[0_2rem_5rem_rgba(0,0,0,0.48)] sm:h-[min(74svh,52rem)]">
           <video
             className="h-full w-full object-cover"
             muted
@@ -95,7 +95,7 @@ function ProjectProcess({ project, index }: { project: ProcessProject; index: nu
 export function BehindTheEditSection() {
   return (
     <section
-      className="border-t border-white/10 bg-black py-24 sm:py-32 lg:py-40"
+      className="border-t border-ink/16 bg-canvas py-24 sm:py-32 lg:py-40"
       aria-labelledby="behind-the-edit-title"
     >
       <div className="page-shell">

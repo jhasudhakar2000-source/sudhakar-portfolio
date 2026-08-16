@@ -1,13 +1,87 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { clients } from "@/content/clients";
+import styles from "./select-clients-section.module.css";
+
+const topRowClients = clients.slice(0, 6);
+const bottomRowClients = clients.slice(6);
+
+type ClientEntry = (typeof clients)[number];
+
+function ClientLogo({
+  client,
+  index,
+  duplicate = false,
+  shouldReduceMotion,
+}: {
+  client: ClientEntry;
+  index: number;
+  duplicate?: boolean;
+  shouldReduceMotion?: boolean | null;
+}) {
+  const logo = (
+    <div className={styles.logoMedia}>
+      <Image
+        src={client.logo}
+        alt={duplicate ? "" : client.name}
+        fill
+        sizes="(min-width: 1280px) 15vw, (min-width: 640px) 20vw, 44vw"
+        className="object-contain"
+      />
+    </div>
+  );
+
+  if (duplicate) {
+    return <div className={styles.logo}>{logo}</div>;
+  }
+
+  return (
+    <motion.div
+      initial={shouldReduceMotion ? { opacity: 0.86 } : { opacity: 0 }}
+      whileInView={{ opacity: 0.86 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, delay: index * 0.06 }}
+      className={styles.logo}
+    >
+      {logo}
+    </motion.div>
+  );
+}
+
+function ClientSequence({
+  row,
+  duplicate = false,
+  indexOffset = 0,
+  shouldReduceMotion,
+}: {
+  row: ClientEntry[];
+  duplicate?: boolean;
+  indexOffset?: number;
+  shouldReduceMotion?: boolean | null;
+}) {
+  return (
+    <div className={styles.logoSequence} aria-hidden={duplicate || undefined}>
+      {row.map((client, index) => (
+        <ClientLogo
+          key={`${duplicate ? "duplicate" : "primary"}-${client.name}`}
+          client={client}
+          index={indexOffset + index}
+          duplicate={duplicate}
+          shouldReduceMotion={shouldReduceMotion}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function SelectClientsSection() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
-      className="border-t border-white/10 bg-black py-24 sm:py-32 lg:py-40"
+      className="border-t border-deep-ink/16 bg-light-sage pb-20 pt-24 text-deep-ink sm:pb-24 sm:pt-32 lg:pb-28 lg:pt-40"
       aria-labelledby="select-clients-title"
     >
       <div className="page-shell">
@@ -18,7 +92,7 @@ export function SelectClientsSection() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl"
         >
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted">
+          <p className="eyebrow text-deep-sage">
             Collaborators
           </p>
           <h2
@@ -27,31 +101,26 @@ export function SelectClientsSection() {
           >
             SELECT CLIENTS
           </h2>
-          <p className="mt-7 text-lg leading-relaxed text-muted sm:text-xl">
-            Brands and creators I&apos;ve had the privilege to work with.
+          <p className="mt-7 text-base leading-relaxed text-muted-ink sm:text-lg">
+            Selected brands, artists and companies I&apos;ve created for.
           </p>
         </motion.div>
 
-        <div className="mt-20 grid grid-cols-2 gap-x-8 gap-y-14 sm:grid-cols-3 sm:gap-x-12 sm:gap-y-16 lg:mt-28 lg:grid-cols-4 lg:gap-x-16 lg:gap-y-20 xl:grid-cols-6">
-          {clients.map((client, index) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.56 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.45, delay: index * 0.06 }}
-              className="flex min-h-16 items-center justify-center transition-opacity duration-300 hover:opacity-100"
-            >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={360}
-                height={120}
-                sizes="(min-width: 1280px) 13vw, (min-width: 1024px) 19vw, (min-width: 640px) 27vw, 42vw"
-                className="h-auto w-full max-w-[11rem] brightness-75 grayscale transition-[filter] duration-300 hover:brightness-100"
+        <div className={`mt-14 sm:mt-16 lg:mt-20 ${styles.marqueeViewport}`}>
+          <div className={styles.marqueeRows}>
+            <div className={`${styles.marqueeTrack} ${styles.topTrack}`}>
+              <ClientSequence row={topRowClients} shouldReduceMotion={shouldReduceMotion} />
+              <ClientSequence row={topRowClients} duplicate />
+            </div>
+            <div className={`${styles.marqueeTrack} ${styles.bottomTrack}`}>
+              <ClientSequence
+                row={bottomRowClients}
+                indexOffset={topRowClients.length}
+                shouldReduceMotion={shouldReduceMotion}
               />
-            </motion.div>
-          ))}
+              <ClientSequence row={bottomRowClients} duplicate />
+            </div>
+          </div>
         </div>
       </div>
     </section>

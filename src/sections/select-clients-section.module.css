@@ -1,0 +1,119 @@
+.marqueeViewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+
+.marqueeRows {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.topTrack {
+  animation: client-marquee-left 34s linear infinite;
+}
+
+.bottomTrack {
+  animation: client-marquee-right 37s linear infinite;
+}
+
+.logoSequence {
+  display: flex;
+  flex: none;
+  gap: clamp(0.875rem, 1.75vw, 1.75rem);
+  padding-right: clamp(0.875rem, 1.75vw, 1.75rem);
+}
+
+.logo {
+  display: flex;
+  width: clamp(8.75rem, 15vw, 14rem);
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 28 / 15;
+}
+
+@keyframes client-marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes client-marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (hover: hover) {
+  .marqueeRows:hover .marqueeTrack {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeViewport {
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marqueeRows {
+    gap: 2rem;
+  }
+
+  .marqueeTrack {
+    width: 100%;
+    animation: none;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .logoSequence {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding-right: 0;
+  }
+
+  .logoSequence[aria-hidden="true"] {
+    display: none;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 14rem;
+    justify-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 640px) {
+  .logoSequence {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 1024px) {
+  .logoSequence {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}

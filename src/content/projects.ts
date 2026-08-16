@@ -71,6 +71,19 @@ export const projects: Project[] = [
       { label: "Story Structure", image: "/images/process-placeholder.svg" },
     ],
   },
+  {
+    slug: "leysha",
+    title: "Leysha",
+    client: "Leysha",
+    year: 2025,
+    category: "Brand Film",
+    summary: "A brand film shaped through cinematic editing and food-led visual storytelling.",
+    featured: false,
+    media: {
+      video: "/projects/leysha/final-video.mp4",
+      thumbnail: "/projects/leysha/thumbnail.jpg",
+    },
+  },
 ];
 
 export function getProjectBySlug(slug: string) {

@@ -1,7 +1,9 @@
 export const siteConfig = {
   name: "Sudhakar",
-  title: "Cinematic Video Editor",
-  description: "Portfolio of Sudhakar, a cinematic video editor crafting memorable moving images.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com",
-  email: "hello@example.com",
+  metadataName: "Sudhakar Jha",
+  title: "Video Editor & AI Filmmaker",
+  description:
+    "Cinematic video editor and AI filmmaker creating commercials, music campaigns, product films, founder content and AI-led visual stories.",
+  url: "https://sudhakar-portfolio-seven.vercel.app",
+  email: "jhasudhakar2000@gmail.com",
 } as const;

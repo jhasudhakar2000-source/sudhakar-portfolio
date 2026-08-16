@@ -1,0 +1,89 @@
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: reel-marquee 72s linear infinite;
+  will-change: transform;
+}
+
+.sequence {
+  display: flex;
+  flex: none;
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  padding-right: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.reel {
+  position: relative;
+  height: clamp(15rem, 25vw, 23rem);
+  flex: none;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: rgb(var(--color-sage));
+  transition: opacity 350ms ease, transform 500ms ease;
+}
+
+.video {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@keyframes reel-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (hover: hover) {
+  .viewport:hover .track {
+    animation-play-state: paused;
+  }
+
+  .viewport:hover .reel:not(:hover) {
+    opacity: 0.62;
+  }
+
+  .reel:hover {
+    transform: translateY(-0.35rem);
+  }
+}
+
+@media (max-width: 639px) {
+  .track {
+    animation-duration: 90s;
+  }
+
+  .reel {
+    height: 13.5rem;
+    border-radius: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    width: max-content;
+    animation: none;
+  }
+
+  .sequence[aria-hidden="true"] {
+    display: none;
+  }
+}

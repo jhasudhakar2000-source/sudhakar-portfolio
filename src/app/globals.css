@@ -3,11 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --color-canvas: 15 15 15;
-  --color-ink: 245 244 239;
-  --color-muted: 169 168 162;
-  --color-line: 55 55 53;
-  --color-accent: 212 255 68;
+  --color-canvas: 233 225 213;
+  --color-elevated: 222 211 196;
+  --color-soft: 243 237 228;
+  --color-ink: 33 27 23;
+  --color-editorial-secondary: 43 33 27;
+  --color-ink-light: 242 238 232;
+  --color-muted: 116 106 97;
+  --color-line: 201 191 181;
+  --color-accent: 214 215 122;
+  --color-sage: 183 191 175;
+  --color-light-sage: 210 215 205;
+  --color-soft-sage: 197 204 192;
+  --color-mid-sage: 143 153 138;
+  --color-deep-sage: 52 59 52;
+  --color-olive-sage: 201 204 159;
+  --color-deep-ink: 32 35 31;
+  --color-muted-ink: 98 106 97;
+  --color-light-text: 242 239 230;
 }
 
 * {
@@ -21,7 +34,7 @@ body {
   margin: 0;
   min-width: 320px;
   background: rgb(var(--color-canvas));
-  color: rgb(var(--color-ink));
+  color: rgb(var(--color-deep-ink));
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
 }
@@ -31,7 +44,7 @@ a {
 }
 ::selection {
   background: rgb(var(--color-accent));
-  color: rgb(var(--color-canvas));
+  color: rgb(var(--color-deep-ink));
 }
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -48,5 +61,44 @@ a {
     width: min(100%, 90rem);
     margin-inline: auto;
     padding-inline: clamp(1.25rem, 4vw, 4rem);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans), sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .eyebrow,
+  .text-xs.font-medium.uppercase {
+    line-height: 1;
+    letter-spacing: 0.14em;
+  }
+
+  .text-sm.uppercase {
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+  }
+
+  .editorial-link {
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  article h1.font-display.font-bold {
+    line-height: 0.86;
+    letter-spacing: -0.065em;
+  }
+}
+
+@layer utilities {
+  .bg-black {
+    background-color: rgb(var(--color-canvas));
+  }
+
+  .border-white\/10 {
+    border-color: rgb(var(--color-ink) / 0.16);
   }
 }

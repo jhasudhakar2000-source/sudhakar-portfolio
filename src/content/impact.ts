@@ -1,7 +1,7 @@
 import type { ImpactMetric } from "@/types/impact";
 
 export const impactMetrics: ImpactMetric[] = [
-  { value: "15+", label: "Brands" },
+  { value: "45+", label: "Brands" },
   { value: "500+", label: "Creative Deliverables" },
   { value: "30+", label: "Million-View Reels" },
   { value: "2+", label: "Years Creating" },
