@@ -4,12 +4,18 @@ export const archiveProjects: ArchiveProject[] = [
   {
     slug: "vanaha",
     title: "VANAHA",
+    client: "VANAHA",
+    category: "Product Film",
+    year: 2026,
     aspectRatio: "9 / 16",
     previewVideo: "/projects/vanaha/final-video.mp4",
   },
   {
     slug: "kimirica",
     title: "Kimirica",
+    client: "Kimirica",
+    category: "Product Film",
+    year: 2026,
     aspectRatio: "16 / 9",
     previewVideo: "/projects/kimirica/final-video.mp4",
   },
