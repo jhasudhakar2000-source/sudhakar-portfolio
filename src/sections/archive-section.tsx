@@ -129,6 +129,9 @@ export function ArchiveSection() {
           {archiveProjects.map((project) => {
             const isOpen = openSlug === project.slug;
             const hasPreview = project.previewVideo !== undefined;
+            const client = project.client ?? "—";
+            const category = project.category ?? "—";
+            const year = project.year ?? "—";
 
             return (
               <div key={project.slug} className="border-b border-deep-ink/16">
@@ -155,13 +158,9 @@ export function ArchiveSection() {
                   <span className="min-w-0 flex-1 font-display text-[clamp(1.8rem,3.5vw,3.75rem)] font-semibold leading-[0.92] tracking-[-0.05em] transition-colors duration-300 group-hover:text-muted-ink">
                     {project.title}
                   </span>
-                  {project.client ? <span className="hidden w-32 text-xs font-medium leading-none tracking-[0.04em] text-muted-ink md:block">{project.client}</span> : null}
-                  {project.category ? (
-                    <span className="hidden w-36 text-xs font-medium leading-none tracking-[0.04em] text-muted-ink lg:block">{project.category}</span>
-                  ) : null}
-                  {project.year ? (
-                    <span className="block w-10 text-right text-xs font-medium leading-none tracking-[0.04em] text-muted-ink sm:w-12">{project.year}</span>
-                  ) : null}
+                  <span className="hidden w-32 text-xs font-medium leading-none tracking-[0.04em] text-muted-ink md:block">{client}</span>
+                  <span className="hidden w-36 text-xs font-medium leading-none tracking-[0.04em] text-muted-ink lg:block">{category}</span>
+                  <span className="block w-10 text-right text-xs font-medium leading-none tracking-[0.04em] text-muted-ink sm:w-12">{year}</span>
                   <span
                     aria-hidden="true"
                     className="text-2xl leading-none text-muted-ink transition-colors duration-300 group-hover:text-deep-sage"
