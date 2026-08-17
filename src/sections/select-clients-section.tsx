@@ -81,7 +81,7 @@ export function SelectClientsSection() {
 
   return (
     <section
-      className="border-t border-deep-ink/16 bg-light-sage pb-20 pt-24 text-deep-ink sm:pb-24 sm:pt-32 lg:pb-28 lg:pt-40"
+      className="border-t border-deep-ink/16 bg-light-sage pb-16 pt-24 text-deep-ink sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-40"
       aria-labelledby="select-clients-title"
     >
       <div className="page-shell">
@@ -106,7 +106,7 @@ export function SelectClientsSection() {
           </p>
         </motion.div>
 
-        <div className={`mt-14 sm:mt-16 lg:mt-20 ${styles.marqueeViewport}`}>
+        <div className={`mt-12 sm:mt-14 lg:mt-16 ${styles.marqueeViewport}`}>
           <div className={styles.marqueeRows}>
             <div className={`${styles.marqueeTrack} ${styles.topTrack}`}>
               <ClientSequence row={topRowClients} shouldReduceMotion={shouldReduceMotion} />

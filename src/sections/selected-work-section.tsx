@@ -194,7 +194,10 @@ export function SelectedWorkSection() {
   );
 
   return (
-    <section id="work" className="border-t border-light-text/16 bg-deep-ink py-24 text-light-text sm:py-32 lg:py-40">
+    <section
+      id="work"
+      className="relative z-10 border-t border-light-text/16 bg-deep-ink py-24 text-light-text sm:py-32 lg:static lg:z-auto lg:py-40"
+    >
       <div className="page-shell">
         <div className="max-w-2xl">
           <p className="eyebrow text-accent">Portfolio</p>
