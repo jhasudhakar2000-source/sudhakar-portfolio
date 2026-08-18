@@ -98,7 +98,7 @@ export function AboutSection() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : 0.14 }}
           className="mt-16 border-t border-deep-ink/16 pt-7 text-xs font-medium uppercase leading-relaxed tracking-[0.14em] text-muted-ink sm:mt-28"
         >
-          45+ Brands <span aria-hidden="true">•</span> 500+ Creative Deliverables{" "}
+          25+ Brands <span aria-hidden="true">•</span> 700+ Creative Deliverables{" "}
           <span aria-hidden="true">•</span> 30+ Million-View Reels
         </motion.p>
       </div>
