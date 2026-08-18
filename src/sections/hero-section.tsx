@@ -58,21 +58,21 @@ export function HeroSection() {
           <motion.h1
             variants={entrance}
             transition={{ duration: 0.65 }}
-            className="mt-10 whitespace-pre-line font-display text-[clamp(2.6rem,8vw,5.7rem)] font-bold leading-[0.9] tracking-[-0.052em] text-deep-ink"
+            className="mt-9 whitespace-pre-line font-display text-[clamp(2.6rem,8vw,5.7rem)] font-bold leading-[0.9] tracking-[-0.052em] text-deep-ink"
           >
             {"EDITOR.\nSTORYTELLER.\nAI FILMMAKER."}
           </motion.h1>
           <motion.p
             variants={entrance}
             transition={{ duration: 0.6 }}
-            className="mt-8 max-w-md text-base leading-relaxed text-muted-ink sm:text-lg"
+            className="mt-7 max-w-md text-base leading-relaxed text-muted-ink sm:text-lg"
           >
             Crafting cinematic commercials through editing, sound design & AI filmmaking.
           </motion.p>
           <motion.div
             variants={entrance}
             transition={{ duration: 0.6 }}
-            className="mt-10 flex flex-wrap gap-3"
+            className="mt-9 flex flex-wrap gap-3"
           >
             <Link
               href="#work"
@@ -87,15 +87,6 @@ export function HeroSection() {
               Start Project
             </Link>
           </motion.div>
-          <motion.p
-            variants={entrance}
-            transition={{ duration: 0.6 }}
-            className="mt-7 text-xs leading-relaxed text-muted-ink"
-          >
-            <span className="mr-2 font-medium text-deep-ink">Worked with</span>
-            Lifelong <span aria-hidden="true">•</span> Universal Music{" "}
-            <span aria-hidden="true">•</span> IndiaMART
-          </motion.p>
         </motion.div>
 
         <motion.div
