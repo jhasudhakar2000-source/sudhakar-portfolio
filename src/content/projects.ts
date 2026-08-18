@@ -39,7 +39,7 @@ export const projects: Project[] = [
     client: "Universal Music",
     year: 2026,
     category: "Music Film",
-    summary: "Cinematic music storytelling powered by editing rhythm and AI visuals.",
+    summary: "Beat-driven 3D music edits blending lyrical visuals, layered imagery and rhythmic motion.",
     featured: true,
     creativeStat: "Music Visual",
     roles: ["Editing", "AI Filmmaking"],
