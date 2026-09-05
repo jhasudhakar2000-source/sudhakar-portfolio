@@ -116,7 +116,7 @@ function FilmCard({
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02] group-focus-within:scale-[1.02]"
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={project.media.thumbnail}
             aria-label={`${project.title} reel preview`}
             onCanPlay={resumePreview}
@@ -133,7 +133,7 @@ function FilmCard({
             alt=""
             fill
             unoptimized
-            loading="eager"
+            loading={index === 0 ? "eager" : "lazy"}
             sizes="(min-width: 1024px) 34rem, 100vw"
             className={`pointer-events-none absolute inset-0 h-full w-full object-cover ${
               hasRenderedFrame ? "opacity-0" : "opacity-100"

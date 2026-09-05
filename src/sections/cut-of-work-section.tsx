@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./cut-of-work-section.module.css";
 
 const reels = [
@@ -30,7 +30,41 @@ function ReelVideo({
   onAudioChange: (video: HTMLVideoElement, isMuted: boolean) => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isPlaybackVisibleRef = useRef(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [shouldPreload, setShouldPreload] = useState(false);
+
+  const resumePlayback = useCallback(() => {
+    const video = videoRef.current;
+    if (!video || !isPlaybackVisibleRef.current) return;
+
+    void video.play().catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isVisible = Boolean(entry?.isIntersecting) && (entry?.intersectionRatio ?? 0) >= 0.1;
+
+        isPlaybackVisibleRef.current = isVisible;
+        setShouldPreload(isVisible);
+
+        if (isVisible) {
+          resumePlayback();
+        } else {
+          video.pause();
+        }
+      },
+      { rootMargin: "128px 96px", threshold: [0, 0.1] },
+    );
+
+    observer.observe(video);
+
+    return () => observer.disconnect();
+  }, [resumePlayback]);
 
   function syncMuted(video: HTMLVideoElement, nextMuted: boolean) {
     setIsMuted(nextMuted);
@@ -58,12 +92,12 @@ function ReelVideo({
       <video
         ref={videoRef}
         className={styles.video}
-        autoPlay
         muted={isMuted}
         loop
         playsInline
-        preload="metadata"
+        preload={shouldPreload ? "metadata" : "none"}
         aria-label={duplicate ? undefined : `Work reel ${index + 1}`}
+        onCanPlay={resumePlayback}
         onVolumeChange={(event) => {
           syncMuted(
             event.currentTarget,

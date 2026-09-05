@@ -5,6 +5,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "deep-chocolate": "rgb(var(--color-deep-chocolate) / <alpha-value>)",
+        "dark-chocolate": "rgb(var(--color-dark-chocolate) / <alpha-value>)",
+        "mid-brown": "rgb(var(--color-mid-brown) / <alpha-value>)",
+        "warm-cream": "rgb(var(--color-warm-cream) / <alpha-value>)",
+        "light-cream": "rgb(var(--color-light-cream) / <alpha-value>)",
+        "soft-beige": "rgb(var(--color-soft-beige) / <alpha-value>)",
+        "dark-text": "rgb(var(--color-dark-text) / <alpha-value>)",
+        "muted-text": "rgb(var(--color-muted-text) / <alpha-value>)",
+        "muted-gold": "rgb(var(--color-muted-gold) / <alpha-value>)",
         canvas: "rgb(var(--color-canvas) / <alpha-value>)",
         elevated: "rgb(var(--color-elevated) / <alpha-value>)",
         soft: "rgb(var(--color-soft) / <alpha-value>)",

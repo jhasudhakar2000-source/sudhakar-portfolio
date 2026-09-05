@@ -76,13 +76,13 @@ export function HeroSection() {
           >
             <Link
               href="#work"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-deep-ink px-7 text-sm font-medium tracking-[0.01em] transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-soft-sage hover:text-deep-ink hover:shadow-[0_0.8rem_2rem_rgba(32,35,31,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-sage"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-deep-ink px-7 text-sm font-medium tracking-[0.01em] transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-soft-sage hover:text-deep-ink hover:shadow-[0_0.8rem_2rem_rgb(var(--color-deep-ink)_/_0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-sage"
             >
               View Projects
             </Link>
             <Link
               href="#contact"
-              className="inline-flex h-14 items-center justify-center rounded-full border border-deep-ink px-7 text-sm font-medium tracking-[0.01em] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent hover:bg-accent hover:text-deep-ink hover:shadow-[0_0.8rem_2rem_rgba(214,215,122,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-sage"
+              className="inline-flex h-14 items-center justify-center rounded-full border border-deep-ink px-7 text-sm font-medium tracking-[0.01em] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-accent hover:bg-accent hover:text-deep-ink hover:shadow-[0_0.8rem_2rem_rgb(var(--color-accent)_/_0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-deep-sage"
             >
               Start Project
             </Link>

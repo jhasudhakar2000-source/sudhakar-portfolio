@@ -13,7 +13,7 @@ export function AboutSection() {
     <section
       ref={aboutRef}
       id="about"
-      className="border-t border-deep-ink/16 bg-sage py-24 text-deep-ink sm:py-32 lg:py-40"
+      className="border-t border-deep-ink/16 bg-soft-sage py-24 text-deep-ink sm:py-32 lg:py-40"
       aria-labelledby="about-title"
     >
       <div className="page-shell">

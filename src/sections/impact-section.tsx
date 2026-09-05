@@ -43,10 +43,10 @@ function CountUpValue({
   return (
     <span className="relative inline-grid tabular-nums">
       <span aria-hidden="true" className="invisible col-start-1 row-start-1 motion-reduce:visible">
-        {value.slice(0, -1)}<span className="text-deep-ink">{value.slice(-1)}</span>
+        {value.slice(0, -1)}<span className="text-accent">{value.slice(-1)}</span>
       </span>
       <span aria-hidden="true" className="col-start-1 row-start-1 motion-reduce:hidden">
-        {count}<span className="text-deep-ink">+</span>
+        {count}<span className="text-accent">+</span>
       </span>
     </span>
   );

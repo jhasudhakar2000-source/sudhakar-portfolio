@@ -3,24 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --color-canvas: 233 225 213;
-  --color-elevated: 222 211 196;
-  --color-soft: 243 237 228;
-  --color-ink: 33 27 23;
-  --color-editorial-secondary: 43 33 27;
-  --color-ink-light: 242 238 232;
-  --color-muted: 116 106 97;
-  --color-line: 201 191 181;
-  --color-accent: 214 215 122;
-  --color-sage: 183 191 175;
-  --color-light-sage: 210 215 205;
-  --color-soft-sage: 197 204 192;
-  --color-mid-sage: 143 153 138;
-  --color-deep-sage: 52 59 52;
-  --color-olive-sage: 201 204 159;
-  --color-deep-ink: 32 35 31;
-  --color-muted-ink: 98 106 97;
-  --color-light-text: 242 239 230;
+  --color-deep-chocolate: 58 36 24;
+  --color-dark-chocolate: 74 46 31;
+  --color-mid-brown: 107 74 54;
+  --color-warm-cream: 232 210 180;
+  --color-light-cream: 243 230 210;
+  --color-soft-beige: 217 194 163;
+  --color-dark-text: 36 24 17;
+  --color-light-text: 247 239 228;
+  --color-muted-text: 141 116 100;
+  --color-muted-gold: 201 163 95;
+
+  --color-canvas: var(--color-warm-cream);
+  --color-elevated: var(--color-soft-beige);
+  --color-soft: var(--color-light-cream);
+  --color-ink: var(--color-dark-text);
+  --color-editorial-secondary: var(--color-dark-chocolate);
+  --color-ink-light: var(--color-light-text);
+  --color-muted: var(--color-muted-text);
+  --color-line: var(--color-soft-beige);
+  --color-accent: var(--color-muted-gold);
+  --color-sage: var(--color-warm-cream);
+  --color-light-sage: var(--color-warm-cream);
+  --color-soft-sage: var(--color-light-cream);
+  --color-mid-sage: var(--color-soft-beige);
+  --color-deep-sage: var(--color-muted-gold);
+  --color-olive-sage: var(--color-muted-gold);
+  --color-deep-ink: var(--color-deep-chocolate);
+  --color-muted-ink: var(--color-muted-text);
 }
 
 * {

@@ -1,7 +1,7 @@
 .marqueeViewport {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
 }
 
 .marqueeRows {
@@ -36,6 +36,7 @@
   flex: none;
   align-items: center;
   justify-content: center;
+  opacity: 0.86;
 }
 
 .logoMedia {
