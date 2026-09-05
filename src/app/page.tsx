@@ -4,6 +4,7 @@ import { ContactSection } from "@/sections/contact-section";
 import { CutOfWorkSection } from "@/sections/cut-of-work-section";
 import { HeroSection } from "@/sections/hero-section";
 import { ImpactSection } from "@/sections/impact-section";
+import { MusicArtistContentSection } from "@/sections/music-artist-content-section";
 import { SelectedWorkSection } from "@/sections/selected-work-section";
 import { SelectClientsSection } from "@/sections/select-clients-section";
 
@@ -12,6 +13,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <SelectedWorkSection />
+      <MusicArtistContentSection />
       <CutOfWorkSection />
       <SelectClientsSection />
       <ImpactSection />
