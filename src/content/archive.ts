@@ -7,7 +7,7 @@ export const archiveProjects: ArchiveProject[] = [
     client: "VANAHA",
     category: "Product Film",
     year: 2026,
-    aspectRatio: "9 / 16",
+    aspectRatio: "16 / 9",
     previewVideo: "/projects/vanaha/final-video.mp4",
   },
   {
