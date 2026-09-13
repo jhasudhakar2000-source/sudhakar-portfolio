@@ -260,6 +260,7 @@ export function MusicArtistContentSection() {
   return (
     <section
       ref={sectionRef}
+      id="music"
       className="overflow-hidden border-t border-light-text/16 bg-editorial-secondary py-24 text-light-text sm:py-32 lg:py-40"
       aria-labelledby="music-artist-content-title"
     >
