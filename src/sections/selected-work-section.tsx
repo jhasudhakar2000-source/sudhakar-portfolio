@@ -12,7 +12,7 @@ type FeaturedFilm = Film & { aspectRatio: string };
 
 const featuredFilmOrder = [
   { slug: "sogl", aspectRatio: "9 / 16" },
-  { slug: "universal-music", aspectRatio: "4 / 5" },
+  { slug: "universal-music", aspectRatio: "16 / 9" },
   { slug: "lifelong", aspectRatio: "9 / 16" },
   { slug: "indiamart-raj-shamani", aspectRatio: "9 / 16" },
 ] as const;
@@ -43,6 +43,7 @@ function FilmCard({
   const videoRef = useRef<HTMLVideoElement>(null);
   const isPlaybackVisibleRef = useRef(false);
   const [hasRenderedFrame, setHasRenderedFrame] = useState(false);
+  const isUniversalMusic = project.slug === "universal-music";
 
   const resumePreview = useCallback(() => {
     const preview = videoRef.current;
@@ -81,7 +82,13 @@ function FilmCard({
   }, [onPlaybackVisibilityChange, resumePreview]);
 
   return (
-    <article className="grid min-h-[76svh] items-center gap-8 border-t border-light-text/16 py-20 first:border-t-0 sm:min-h-[82svh] sm:gap-10 sm:py-32 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(18rem,0.5fr)] lg:gap-[clamp(3rem,10vw,12rem)] lg:py-36">
+    <article
+      className={`grid min-h-[76svh] items-center gap-8 border-t border-light-text/16 py-20 first:border-t-0 sm:min-h-[82svh] sm:gap-10 sm:py-32 lg:py-36 ${
+        isUniversalMusic
+          ? "lg:grid-cols-[minmax(18rem,0.62fr)_minmax(34rem,1fr)] lg:gap-[clamp(3rem,6vw,7rem)]"
+          : "lg:grid-cols-[minmax(18rem,0.72fr)_minmax(18rem,0.5fr)] lg:gap-[clamp(3rem,10vw,12rem)]"
+      }`}
+    >
       <div className="order-2 max-w-md lg:order-1">
         <p className="eyebrow text-accent">FILM 0{index + 1}</p>
         <p className="mt-3 text-xs font-medium uppercase leading-none tracking-[0.14em] text-light-text/60 sm:mt-4">{project.category}</p>
@@ -100,7 +107,13 @@ function FilmCard({
         </Link>
       </div>
 
-      <div className="group relative order-1 block w-full max-w-[34rem] justify-self-center lg:order-2">
+      <div
+        className={`group relative order-1 block w-full justify-self-center lg:order-2 ${
+          isUniversalMusic
+            ? "max-w-[34rem] sm:max-w-[42rem] lg:max-w-[52rem] lg:justify-self-end"
+            : "max-w-[34rem]"
+        }`}
+      >
         <Link
           href={`/work/${project.slug}`}
           className="absolute inset-0 z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-light-text"

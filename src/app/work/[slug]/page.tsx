@@ -176,8 +176,8 @@ function UniversalMusicCaseStudy({ project, media, nextProject }: { project: Pro
             <MutedVideo
               containerClassName="overflow-hidden rounded-[1.5rem] bg-editorial-secondary shadow-[0_2rem_5rem_rgba(33,27,23,0.5)]"
               className="block h-auto w-full"
-              width={1080}
-              height={1350}
+              width={1280}
+              height={720}
               autoPlay
               loop
               playsInline
